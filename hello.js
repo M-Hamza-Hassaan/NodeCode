@@ -49,7 +49,11 @@
 //   console.log("Server is listening on port 8080");
 // });
 
+
+
+
 //FILE SYSTEM 
+
 //PART-6
 //Most Important part! Going to read an html file in server.
 // var http = require('http');
@@ -72,6 +76,8 @@
 //   console.log("Server is listening on port 8080");
 // });
 
+
+
 //PART-7
 // var http = require('http');
 // var fs = require('fs');
@@ -87,6 +93,8 @@
 // }).listen(8080, function(){
 //     console.log('Server is listening on port 8080');
 // });
+
+
 
 //PART-8
 
@@ -113,6 +121,8 @@
 //     console.log('Server is listening on port 8080');
 // })
 
+
+
 //PART-9
 //without using any flag...just to see what happens
 // The Already wriiten text was replaced by new text. This is Done by Using fs.open() method.
@@ -123,18 +133,19 @@
 // 'r' for reading without changing the file.
 // 'a' for appending new content without deleting existing content.
 // 'w' for writing, which will clear any existing content.
-var http = require ('http');
-var fs = require('fs');
 
-http.createServer(function(req, res){
-    fs.open('myNewFile1.txt', 'w',function(err, fileDescriptor){
-        if(err){
-            res.writeHead(500, { 'Content-Type': 'text/plain' });
-            res.write('Internal Server Error: File could not be opened.');
-            return res.end();
-        }
-        res.writeHead(200, {'Content-Type' : 'text/html'});
-        res.write("The file has been opened successfully.");
-        res.end();
-    })
-}).listen(8080, function(){console.log('Server is listening on port 8080')});
+// var http = require ('http');
+// var fs = require('fs');
+
+// http.createServer(function(req, res){
+//     fs.open('myNewFile1.txt', 'w',function(err, fileDescriptor){
+//         if(err){
+//             res.writeHead(500, { 'Content-Type': 'text/plain' });
+//             res.write('Internal Server Error: File could not be opened.');
+//             return res.end();
+//         }
+//         res.writeHead(200, {'Content-Type' : 'text/html'});
+//         res.write("The file has been opened successfully.");
+//         res.end();
+//     })
+// }).listen(8080, function(){console.log('Server is listening on port 8080')});
