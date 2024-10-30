@@ -95,3 +95,29 @@
 // });
 
 
+
+//PART-8
+
+// What i did, i just used readfile on newly created file, just for practice, must do that
+
+// var http = require ('http');
+// var fs = require('fs');
+
+// http.createServer(function(req, res){
+//     fs.readFile('myNewFile1.txt', function(err, data){
+//         if(err){
+//             res.writeHead(404, {'content-type': 'text/plain'});
+//             res.write('File not found');
+//             return res.end('Undone!!');
+//         }
+//         else{
+
+//             res.writeHead(200, {'content-type': 'text/html'});
+//             res.write(data);
+//             res.end();
+//         }
+//     })
+// }).listen(8080, function(){
+//     console.log('Server is listening on port 8080');
+// })
+
