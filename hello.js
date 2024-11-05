@@ -184,14 +184,37 @@
 
 
 //PART 12
+// var http = require('http');
+// var fs = require('fs');
+
+// http.createServer(function(req, res){
+//     fs.unlink('myNewFile1.txt' , function(err){
+//         if(err){
+//             res.writeHead(500, {'Content-type': 'text/html'});
+//             res.write("Error Bro");
+//             return res.end();
+//     }})
+// }).listen(8080, function(){console.log('Server py dekh byy')});
+
+
+
+//PART 13
 var http = require('http');
 var fs = require('fs');
 
 http.createServer(function(req, res){
-    fs.unlink('myNewFile1.txt' , function(err){
-        if(err){
-            res.writeHead(500, {'Content-type': 'text/html'});
+    
+    fs.rename('myNewFile1.txt','Renamed.txt', (err) => {
+        if (err) {
+            res.writeHead(500, { 'Content-Type': 'text/html' });
             res.write("Error Bro");
             return res.end();
-    }})
-}).listen(8080, function(){console.log('Server py dekh byy')});
+        }
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.write("Ho gea Bro");
+        return res.end();
+    });
+}).listen(8080, function(){console.log('Server py dekhen sir')});
+
+
+
