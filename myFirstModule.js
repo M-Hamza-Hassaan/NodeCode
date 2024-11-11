@@ -1,3 +1,4 @@
-exports.myDateTime = function(){
-return 	Date();
-}
+export function myDateTime() {
+    return new Date().toLocaleString();
+  }
+  

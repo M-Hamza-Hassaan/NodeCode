@@ -18,16 +18,18 @@
 // eventEmitter.emit('scream')
 
 //Part 18
-var events = require('events');
-var chatScene = new events.EventEmitter();
+// var events = require('events');
+// var chatScene = new events.EventEmitter();
 
-chatScene.on('Entered Here', (username) => {
-    console.log('Hey, welcome' + username);
-})
+// chatScene.on('Entered Here', (username) => {
+//     console.log('Hey, welcome' + username);
+// })
 
-chatScene.on('Left Chat', (username) => {
-    console.log(username + 'has left!');
-})
+// chatScene.on('Left Chat', (username) => {
+//     console.log(username + 'has left!');
+// })
 
-chatScene.emit('Entered Here' , 'JJ');
-chatScene.emit('Left Chat' , 'LL');
+// chatScene.emit('Entered Here' , 'JJ');
+// chatScene.emit('Left Chat' , 'LL');
+
+//So the nodejs is simply unedrstood, now lets move to MYSQL with Nodejs
