@@ -36,7 +36,7 @@ export function AdmissionForm() {
     setStatus('');
 
     try {
-      const response = await fetch('http://localhost:5000/admission', {
+      const response = await fetch('http://localhost:5000/submit-form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
