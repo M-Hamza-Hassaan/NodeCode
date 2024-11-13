@@ -10,11 +10,11 @@ app.use(bodyParser.json());
 
 // MSSQL Database Configuration
 const dbConfig = {
-  server: '10.1.8.47',
-  port: 1433,
-  user: 'intern',
-  password: 'intern@4321',
-  database: 'TestDB',
+  server: '123.123.123.123',
+  port: 1234,
+  user: 'abcd',
+  password: 'abcd123',
+  database: 'abcd123DB',
   options: {
     encrypt: true,
     trustServerCertificate: true,
