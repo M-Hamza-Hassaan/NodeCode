@@ -36,7 +36,7 @@ export function AdmissionForm() {
     setStatus('');
 
     try {
-      const response = await fetch('http://localhost:5000/submit-form', {
+      const response = await fetch('http://localhost:8000/api/submit-form', { 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -76,20 +76,57 @@ export function AdmissionForm() {
   ];
 
   return (
-    <form onSubmit={handleSubmit}
-      style={{background:'skyblue', maxWidth: '400px', margin: '2% auto', padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
-      <h2>Admission Form</h2>
-      <Form  formData={formData} handleChange={handleChange} formFields={formFields} />
-      <button
-        type="submit"
-        disabled={isLoading}
-        style={{
-          width: '100%', padding: '10px', backgroundColor: '#007bff',
-          color: '#fff', border: 'none', borderRadius: '4px', cursor: isLoading ? 'not-allowed' : 'pointer'
-        }}>
-        {isLoading ? 'Submitting...' : 'Submit'}
-      </button>
-      <p style={{ marginTop: '10px', color: status.includes('successfully') ? 'green' : 'red' }}>{status}</p>
-    </form>
+<form onSubmit={handleSubmit} 
+  style={{
+    background: '#f4f7fa', 
+    maxWidth: '450px', 
+    margin: '5% auto', 
+    padding: '30px', 
+    border: '1px solid #ccc', 
+    borderRadius: '12px', 
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+    fontFamily: 'Arial, sans-serif',
+    color: '#333'
+  }}>
+  <h2 style={{
+    textAlign: 'center', 
+    color: '#007bff', 
+    fontSize: '24px', 
+    marginBottom: '20px'
+  }}>Admission Form</h2>
+  
+  <Form formData={formData} handleChange={handleChange} formFields={formFields} />
+  
+  <button
+    type="submit"
+    disabled={isLoading}
+    style={{
+      width: '100%', 
+      padding: '12px', 
+      backgroundColor: '#007bff',
+      color: '#fff', 
+      border: 'none', 
+      borderRadius: '6px', 
+      cursor: isLoading ? 'not-allowed' : 'pointer',
+      fontSize: '16px',
+      transition: 'background-color 0.3s ease',
+      fontWeight: 'bold'
+    }}
+    onMouseOver={(e) => e.target.style.backgroundColor = '#0056b3'}
+    onMouseOut={(e) => e.target.style.backgroundColor = '#007bff'}
+  >
+    {isLoading ? 'Submitting...' : 'Submit'}
+  </button>
+
+  <p style={{
+    marginTop: '15px', 
+    textAlign: 'center', 
+    fontSize: '14px', 
+    color: status.includes('successfully') ? 'green' : 'red'
+  }}>
+    {status}
+  </p>
+</form>
+
   );
 }
