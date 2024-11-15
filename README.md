@@ -6,6 +6,8 @@ I hope everyone will benefit from this repo.
 
 ## How to Use It
 
+Get to the Specific Day.
+
 Make a new folder. 
 
 Pull this repo.
