@@ -1,6 +1,6 @@
 # CodeNode
 
-In this repo, I have recorded the code that I practiced to learn Node.js. 
+In this repo, I have recorded the code that I practiced to learn Node.js/ Exu. 
 
 I hope everyone will benefit from this repo.
 
