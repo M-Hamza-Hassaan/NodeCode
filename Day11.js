@@ -19,5 +19,3 @@
 // console.log(SystemUpTime);
 // console.log(userInfo);
 // console.log(otherInfos);
-
-// // Part 20
