@@ -1,12 +1,10 @@
 # CodeNode
 
-In this repo, I have recorded the code that I practiced to learn Node.js/ Exu. 
+In this repo, I have recorded the code that I practiced to learn Node.js. 
 
 I hope everyone will benefit from this repo.
 
 ## How to Use It
-
-Get to the Specific Day.
 
 Make a new folder. 
 
