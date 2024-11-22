@@ -32,4 +32,4 @@
 // chatScene.emit('Entered Here' , 'JJ');
 // chatScene.emit('Left Chat' , 'LL');
 
-//So the nodejs is simply unedrstood, now lets move to MYSQL with Nodejs
+//So the nodejs is simply unedrstood, now lets move to make something with Nodejs using MSSQL
