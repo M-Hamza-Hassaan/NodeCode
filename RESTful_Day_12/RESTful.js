@@ -4,6 +4,7 @@ const users = require('./MOCK_DATA.json')
 const PORT = 8000
 
 app.get('/users' , (req, res) => {
+    // return res.json(users);
     const html = `<ul>
     ${users.map((user) => `<li>My name is ${user.first_name}</li>`).join("")}
     </ul>`;
@@ -14,17 +15,56 @@ app.get('/users' , (req, res) => {
 //APPLYING RESTAPI TO MAKE IT FEASIBLE FOR ALL USERS
 app.get("/api/users" , (req, res) => {
     return res.json(users);
+    // const html = `<ul>
+    // ${users.map((user) => `<li>My name is ${user.first_name}</li>`).join("")}
+    // </ul>`;
+    // return res.send(html);
 });
 // GET ALL USERS---DONE
 
-app.get("/api/users/:ID" , (req,res) =>{
-    const id = Number(req.params.ID);
+app.get("/api/users/:id" , (req,res) =>{
+    const id = Number(req.params.id);
     const user = users.find((user) => user.id === id);
-    return res.json(user);
+    // return res.json(user);
 
-    // const html = `<li>My name is ${user.first_name}</li>`;
-    // return res.send(html)
+    const html = `<li>My name is ${user.first_name}</li>`;
+    return res.send(html)
 })
+//GET USER BY ID---DONE
+
+
+
+
+// app.post("/api/users" , (req, res) => {
+//     return res.json({status:"pending"});
+// });
+
+// app.patch("/api/users/:id" , (req, res) => {
+//     return res.json({status:"pending"});
+// });
+
+// app.delete("/api/users/:id" , (req, res) => {
+//     return res.json({status:"pending"});
+// });
+
+
+
+
+// app.route("/api/users/:id")
+
+
+
+// .get((req,res) =>{
+//     const id = Number(req.params.id);
+//     const user = users.find((user) => user.id === id);
+//     return res.json(user);
+// })
+// .patch((req, res) => {
+//     return res.json({status:"pending"});
+// })
+// .delete((req, res) => {
+//     return res.json({status:"pending"});
+// })
 
 
 
