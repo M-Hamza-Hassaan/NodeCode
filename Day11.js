@@ -40,18 +40,20 @@
 // });
 
 // PART 20
-// Setting up Express application, by doing basic routing
+// Setting up Express application, by doing basic routing, also install "Nodemon" to auto restart the server.
 
-var  express = require('express');
-var app = express();
+// var  express = require('express');
+// var app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello Dunya');
-})
-app.get('/profile', (req, res) =>{
-    res.send('Hello World');
-})
+// app.get('/', (req, res) => {
+//     res.send('Hello Dunya');
+// })
+// app.get('/profile', (req, res) =>{
+//     res.send('Hello World');
+// })
 
-app.listen(8080, ()=>{
-    console.log('Server is running on port 8080');
-})
+// app.listen(8080, ()=>{
+//     console.log('Server is running on port 8080');
+// })
+
+// THIS WAS BASIC ROUTING IN EXPRESS
