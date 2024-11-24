@@ -20,10 +20,10 @@ app.get("/api/users" , (req, res) => {
 app.get("/api/users/:ID" , (req,res) =>{
     const id = Number(req.params.ID);
     const user = users.find((user) => user.id === id);
-    // return res.json(user);
-    const html = `<li>My name is ${user.first_name}</li>`
-   ;
-    return res.send(html)
+    return res.json(user);
+
+    // const html = `<li>My name is ${user.first_name}</li>`;
+    // return res.send(html)
 })
 
 
