@@ -7,6 +7,8 @@ RESTfull in JSON Format
  2- GET /users/1 - Get the user with id 1
     GET /users/2 - Get the user with id 2
 
+    GET /api/users/:id (:id variable refers to dynamic ID of each user)
+
  3- POST /users - Create new user
  4- PATCH /users/1 - Edit the user with id 1
  5- DELETE /users/1 - Delete the user id 1
