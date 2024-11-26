@@ -79,7 +79,7 @@ app.post("/api/users" , (req, res) => {
     const body = req.body;
     users.push({...body, id: users.length+1});
     fs.writeFile('MOCK_DATA.json' , JSON.stringify(users), (err, data)=>{
-      return res.json({status:"success", message:"User added successfully"});
+        return res.json({status:"success", message:"User added successfully"});
     })
 });
 
@@ -95,8 +95,11 @@ app.route("/api/users/:id")
     return res.json({status:"pending"});
 })
 .delete((req, res) => {
-    return res.json({status:"pending"});
-})
+    users.pop(users.length-1);
+    fs.writeFile('MOCK_DATA.json' , JSON.stringify(users), (err, data)=>{
+    return res.json({status:"success", message:"User added successfully"});
+});
+});
 
 
 
