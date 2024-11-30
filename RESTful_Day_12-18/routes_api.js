@@ -91,13 +91,20 @@ app.route("/api/users/:id")
     const user = users.find((user) => user.id === id);
     return res.json(user);
 })
+
 .patch((req, res) => {
     return res.json({status:"pending"});
 })
+
 .delete((req, res) => {
-    users.pop(users.length-1);
-    fs.writeFile('MOCK_DATA.json' , JSON.stringify(users), (err, data)=>{
-    return res.json({status:"success", message:"User added successfully"});
+    const id = Number(req.params.id);
+    const userIndex = (users.findIndex(user => user.id ===id))
+    users.splice(userIndex, 1); //remove element of the array
+    fs.writeFile('MOCK_DATA.json' , JSON.stringify(users), (err)=>{
+        if(err){
+            return res.json({status:"error", message:"User could not be removed"});
+        }
+    return res.json({status:"success", message:"User removed successfully"});
 });
 });
 
