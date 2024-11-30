@@ -86,6 +86,7 @@ app.post("/api/users" , (req, res) => {
 
 app.route("/api/users/:id")
 
+
 .get((req,res) =>{
     const id = Number(req.params.id);
     const user = users.find((user) => user.id === id);
@@ -93,13 +94,27 @@ app.route("/api/users/:id")
 })
 
 .patch((req, res) => {
-    return res.json({status:"pending"});
+    const id = Number(req.params.id); 
+    const body = req.body; 
+    const userIndex = users.findIndex(user => user.Id === id);
+
+    users[userIndex] = { ...users[userIndex], ...body };
+
+    fs.writeFile('MOCK_DATA.json', JSON.stringify(users), (err) => {
+        if (err) {
+            return res.status(500).json({ status: "error", message: "User could not be updated" });
+        }
+        return res.json({ status: "success", message: "User updated successfully" });
+    });
 })
+
 
 .delete((req, res) => {
     const id = Number(req.params.id);
     const userIndex = (users.findIndex(user => user.id ===id))
+
     users.splice(userIndex, 1); //remove element of the array
+
     fs.writeFile('MOCK_DATA.json' , JSON.stringify(users), (err)=>{
         if(err){
             return res.json({status:"error", message:"User could not be removed"});
