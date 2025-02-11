@@ -8,10 +8,7 @@ const PORT = 8000;
 
 
 // Connect to MongoDB
-mongoose.connect("mongodb://localhost:27017/now-practice-mongo", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect("mongodb://localhost:27017/now-practice-mongo")
 .then(() => console.log("MongoDB Connected"))
 .catch((err) => console.log("MongoDB Connection Error:", err));
 
@@ -26,6 +23,7 @@ const User = mongoose.model("User", userSchema);
 
 // Middleware to parse JSON body
 app.use(express.json());
+
 
 // Get all users
 app.get("/api/users", async (req, res) => {
@@ -49,6 +47,7 @@ app.post("/api/users", async (req, res) => {
     }
 });
 
+
 // Get user by ID
 app.get("/api/users/:id", async (req, res) => {
     try {
@@ -60,6 +59,7 @@ app.get("/api/users/:id", async (req, res) => {
     }
 });
 
+
 // Update user by ID
 app.patch("/api/users/:id", async (req, res) => {
     try {
@@ -70,6 +70,7 @@ app.patch("/api/users/:id", async (req, res) => {
         res.status(500).json({ status: "error", message: "Error updating user" });
     }
 });
+
 
 // Delete user by ID
 app.delete("/api/users/:id", async (req, res) => {
