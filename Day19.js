@@ -8,8 +8,11 @@ const PORT = 8000;
 
 
 // Connect to MongoDB
-mongoose.connect("mongodb://localhost:27017/now-practice-mongo")
-.then(() => console.log("MongoDB Connected"))
+mongoose.connect('mongodb://127.0.0.1:27017/mydatabase', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => console.log(" MongoDB Connected Successfully"))
 .catch((err) => console.log("MongoDB Connection Error:", err));
 
 // Define Schema & Model
